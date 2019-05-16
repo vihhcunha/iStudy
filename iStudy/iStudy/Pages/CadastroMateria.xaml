@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="iStudy.CadastroMateria">
+    <StackLayout Margin="12"
+                Padding="24"
+                BackgroundColor="#FF464646"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                 HeightRequest="250">
+        <Label Text="Adicionar Matéria"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand"
+               FontAttributes="Bold"
+               Margin="0,10,0,30"
+               FontSize="28"/>
+        <Entry Placeholder="Escreva o nome da nova matéria" 
+               x:Name="Nome"
+               TextColor="White"
+               FontAttributes="Bold"
+               PlaceholderColor="White"
+               Margin="0,0,0,30"/>
+
+        <Button Text="Adicionar" 
+                CornerRadius="20"
+                FontSize="26"
+                TextColor="White"
+                BorderColor="Black"
+                BorderWidth="1"
+                BackgroundColor="#3849E8"
+                Clicked="AdicionarNoBancoMaterias"
+                />
+    </StackLayout>
+</pages:PopupPage>

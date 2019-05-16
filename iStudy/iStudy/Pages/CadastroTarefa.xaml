@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="iStudy.Pages.CadastroTarefa">
+    
+        <StackLayout Margin="12"
+                    Padding="24"
+                    BackgroundColor="#FF464646"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                     HeightRequest="500">
+            <Label Text="Adicionar Tarefa"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,30"
+                   FontSize="28"/>
+            <Entry Placeholder="Escreva o nome da nova tarefa" 
+                   x:Name="Nome"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   PlaceholderColor="White"
+                   Margin="0,0,0,30"/>
+            <Label Text="Data"
+                   TextColor="White"
+                   HorizontalOptions="StartAndExpand"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,10"
+                   FontSize="24"/>
+            <DatePicker TextColor="White"
+                        FontSize="22"
+                        Margin="0,0,0,30"
+                        x:Name="Data"
+                        />
+            <Editor TextColor="White"
+                    FontSize="20"
+                    AutoSize="TextChanges"
+                    Placeholder="Digite os detalhes da tarefa"
+                    PlaceholderColor="White"
+                    Margin="0,0,0,60"
+                    x:Name="Descri"/>
+            <Button Text="Adicionar" 
+                    CornerRadius="20"
+                    FontSize="26"
+                    TextColor="White"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    BackgroundColor="#3849E8"
+                    Clicked="AdicionarNoBancoTarefas"/>
+        </StackLayout>
+    
+</pages:PopupPage>

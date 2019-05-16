@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iStudy.Calendario"
+             Title="Calendário">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="order.png" Order="Primary" Clicked="Ordenar_Tarefa"/>
+        <ToolbarItem Icon="plus.png" Order="Primary" Clicked="Cadastrar_Tarefa"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HeightRequest="50">
+                <Image Source="search.png" Margin="20,10,0,10"/>
+                <SearchBar TextColor="White"
+                       Placeholder="Pesquisar..."
+                       PlaceholderColor="White"
+                       FontSize="21"
+                       VerticalOptions="FillAndExpand"
+                       IsSpellCheckEnabled="True"
+                       HorizontalOptions="FillAndExpand"
+                       TextChanged="SearchBar_TextChanged"/>
+            </StackLayout>
+            <ListView x:Name="lista"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="AtualizarLista2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete"
+                                           CommandParameter="{Binding .}"
+                                           Icon="lixo.png"
+                                           IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            
+                            <Grid BackgroundColor="#FF464646">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.8*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Grid.Row="0"
+                                             Grid.Column="0">
+
+                                    <Label Text="{Binding DataEvento}"
+                                           TextColor="White"
+                                           FontSize="22"
+                                           FontAttributes="Bold"
+                                           VerticalTextAlignment="Center"
+                                           Margin="30,30,0,0"/>
+
+                                    <Label Text="{Binding NomeEvento}"
+                                           TextColor="White"
+                                           FontSize="22"
+                                           VerticalTextAlignment="Center"
+                                           Margin="30,20,0,0"/>
+
+
+                                    <Label Text="{Binding DescEvento}"
+                                           TextColor="White"
+                                           FontSize="22"
+                                           VerticalTextAlignment="Center"
+                                           Margin="30,20,0,20 "/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+    
+    
+    

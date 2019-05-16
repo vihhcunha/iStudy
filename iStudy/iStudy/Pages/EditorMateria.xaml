@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iStudy.Pages.EditorMateria">
+    <ScrollView>
+        <StackLayout BackgroundColor="Black">
+
+            <Grid BackgroundColor="#3849E8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Button Text="X"
+                        TextColor="White"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Clicked="Fechar"
+                        Margin="0,0,0,0"
+                        HorizontalOptions="StartAndExpand"
+                        BackgroundColor="Transparent"/>
+
+                <Button Text="Salvar"
+                        TextColor="White"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Clicked="Salvar"
+                        HorizontalOptions="EndAndExpand"
+                        BackgroundColor="Transparent"/>
+            </Grid>
+            
+            <Label x:Name="materia" 
+                   TextColor="White"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   Margin="0,20,0,0"/>
+
+            <Editor x:Name="editor"
+                    AutoSize="TextChanges" 
+                    BackgroundColor="#FF464646" 
+                    IsSpellCheckEnabled="True" 
+                    IsTextPredictionEnabled="True" 
+                    Placeholder="Digite aqui a sua anotação" 
+                    PlaceholderColor="White"
+                    TextColor="White"
+                    FontSize="19"
+                    FontFamily="Arial"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iStudy.Materias"
+             xmlns:pages="clr-namespace:iStudy.Pages"
+             Title="Matérias">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="plus.png" Order="Primary" Clicked="Cadastrar_Materia"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HeightRequest="50">
+                <Image Source="search.png" Margin="20,10,0,10" HorizontalOptions="Start"/>
+                <SearchBar TextColor="White"
+                       Placeholder="Pesquisar..."
+                       PlaceholderColor="White"
+                       FontSize="21"
+                       VerticalOptions="FillAndExpand"
+                       IsSpellCheckEnabled="True"
+                       HorizontalOptions="StartAndExpand"
+                       TextChanged="SearchBar_TextChanged"
+                       />
+            </StackLayout>
+
+            <ListView x:Name="lista"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="AtualizarLista2"
+                      ItemSelected="lista_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <ViewCell.ContextActions>
+                                 <MenuItem Clicked="OnDelete"
+                                           CommandParameter="{Binding .}"
+                                           Icon="lixo.png"
+                                           IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            
+                            
+                            <Grid BackgroundColor="#FF464646">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.8*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="{Binding NomeMateria}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="22"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       Margin="30,0,0,0"/>
+                            </Grid>
+ 
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="iStudy.Pages.OrdenarPage">
+    
+    <StackLayout Margin="12"
+                   Padding="24"
+                    BackgroundColor="#FF464646"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    HeightRequest="150">
+        <Picker x:Name="picker"
+                Title="Ordenar por:"
+                TitleColor="White"
+                TextColor="White"
+                FontSize="21"
+                VerticalOptions="CenterAndExpand">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Data Decrescente</x:String>
+                    <x:String>Data Crescente</x:String>
+                    <x:String>Nome</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button Text="Ordenar" 
+                    CornerRadius="20"
+                    FontSize="26"
+                    TextColor="White"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    BackgroundColor="#3849E8"
+                    Clicked="Ordenar"
+                VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+</pages:PopupPage>
